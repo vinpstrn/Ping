@@ -1,3 +1,210 @@
-body {
+.container {
+    max-width: 144rem;
+    margin: 0 auto;
+}
+
+.wrapper {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+}
+
+// HEADER
+.header {
+    width: 50rem;
+    margin: 0 auto;
     
+    @media (max-width: 37.5em) { // 600px
+        width: 90%;
+    }
+
+    &__logo {
+        svg {
+            height: 6rem;
+            width: 6rem;
+        }
+    }
+
+    &__title {
+        color: $color-gray;
+        font-weight: 300;
+        margin-bottom: 1.5rem;
+        font-size: 3rem;
+
+        @media (max-width: 37.5em) { // 600px
+            font-size: 2.5rem;
+        }
+
+        span {
+            font-weight: 700;
+            color: $color-dark;
+        }
+    }
+
+    &__description {
+        font-weight: 600;
+        font-size: 1.5rem;
+        margin-bottom: 2rem;
+
+        @media (max-width: 37.5em) { // 600px
+            font-size: 1.4rem;
+        }
+    }
+}
+
+// INPUT
+.form {
+    &__wrapper {
+        display: flex;
+        width: 100%;
+
+        @media (max-width: 37.5em) { // 600px
+            flex-direction: column;
+        }
+    }
+
+    &__input-group {
+        position: relative;
+        flex: 60%;
+        margin: 0 1.5rem 2.5rem 0;
+
+        @media (max-width: 37.5em) { // 600px
+            flex: 1;
+            margin: 0 0 2.5rem 0;
+            padding: 0 3rem 0 3rem;
+        }
+    }
+
+    &__email {
+        border: 1px solid $color-gray;
+        border-radius: 10rem;
+        display: inline-block;
+        padding: 1rem 1.5rem;
+        width: 100%;
+
+        &:focus {
+            outline: none;
+        }
+
+        &::placeholder {
+            color: $color-gray;
+        }
+    }
+
+    &__validate {
+        padding-left: 1rem;
+        margin-top: .5rem;
+        font-style: italic;
+        font-size: 1.25rem;
+        position: absolute;
+        width: 100%;
+        left: 0;
+        bottom: -2rem;
+
+        @media (max-width: 37.5em) { // 600px
+            left: 50%;
+            transform: translateX(-50%);
+        }
+    }
+
+    &__btn-group {
+        flex: 0 0 35%;
+
+        @media (max-width: 37.5em) { // 600px
+            width: 100%;
+            margin: 0;
+            padding: 0 3rem 0 3rem;
+        }
+    }
+
+    &__btn {
+        background-color: $color-blue;
+        color: $color-white;
+        text-decoration: none;
+        display: inline-block;
+        border-radius: 10rem;
+        padding: 1rem 1.5rem;
+        font-size: 1.3rem;
+        box-shadow: 0 5px 5px rgba($color-blue, 0.3);
+        transition: background-color .25s;
+        width: 100%;
+
+        &:hover {
+            background-color: lighten($color-blue, 10%);
+        }
+    }
+}
+
+// Invalid
+.invalid {
+    border: 1px solid $color-red !important;
+}
+
+// MAIN
+.content {
+    margin: 3rem auto 2rem auto;
+    width: 50rem;
+
+    @media (max-width: 37.5em) { // 600px
+        width: 90%;
+    }
+
+    &__photo {
+        width: 100%;
+        height: auto;
+        display: block;
+    }
+}
+
+// FOOTER
+.footer {
+
+    &__logo-box {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 1.5rem;
+    }
+
+    &__logo-wrap {
+        width: 3rem;
+        height: 3rem;
+        padding: .75rem;
+        background-color: $color-white;
+        border: 1px solid $color-blue-light;
+        border-radius: 50%;
+        transition: all .25s;
+
+        &:not(:last-child) {
+            margin-right: 1.5rem;
+        }
+
+        svg {
+            width: 100%;
+            height: 100%;
+            fill: $color-blue;
+            display: block;
+        }
+
+        &:hover {
+            background-color: $color-blue;
+            cursor: pointer;
+        }
+
+        &:hover svg {
+            fill: $color-white;
+        }
+    }
+
+    &__copyright {
+        font-size: 1.25rem;
+        color: $color-gray;
+
+        a {
+            color: $color-blue;
+            text-decoration: none;
+        }
+    }
 }
