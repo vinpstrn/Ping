@@ -7,7 +7,7 @@ email.addEventListener('blur', () => {
 
     if(!re.test(email.value)) {
         validator();
-        
+
     } else {
         email.classList.remove('invalid');
         validate.innerHTML = '';
@@ -23,6 +23,7 @@ btn.addEventListener('click', () => {
     } else if(re.test(email.value)) {
         validate.innerHTML = 'Thank you for subscribing!';
         validate.style.color = 'green';
+        email.value = '';
 
         setTimeout(function() {
             validate.innerHTML = '';
